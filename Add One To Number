@@ -1,0 +1,24 @@
+vector<int> Solution::plusOne(vector<int> &A) 
+{
+    
+    int i=A.size()-1;
+    while((A[i]==9)&&(i>=0))
+    {
+        A[i]=0;
+        i--;
+    }
+    if(i==-1)
+    {
+        A.insert(A.begin(),1);
+    }
+    else
+    {
+        A[i]++;
+    }
+    while(A[0]==0)
+    {
+        A.erase(A.begin());
+    }
+    return A;
+   
+}
